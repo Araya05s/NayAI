@@ -1,4 +1,3 @@
-import React from 'react'
 import { NAV_LINKS } from '../config/navigation'
 
 const Navbar = () => {
