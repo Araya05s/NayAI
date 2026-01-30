@@ -1,11 +1,5 @@
 import React from 'react'
-
-const links = [
-    { name: "Upload", href: "#upload" },
-    { name: "Home", href: "#hero" },
-    { name: "Features", href: "#features" },
-    { name: "About", href: "#about" },
-  ];
+import { NAV_LINKS } from '../config/navigation'
 
 const Navbar = () => {
   return (
@@ -18,7 +12,7 @@ const Navbar = () => {
             </a>
 
             <div className="flex gap-6 text-sm">
-            {links.map(link => (
+            {NAV_LINKS.map(link => (
                 <a
                 key={link.name}
                 href={link.href}
