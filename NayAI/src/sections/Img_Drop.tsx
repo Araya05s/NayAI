@@ -1,12 +1,37 @@
 import { useState, useRef } from 'react'
 import type { DragEvent, ChangeEvent } from 'react';
 import "/public/icons/upload.svg"
+import { ImgConvert } from '../utils/imgConvert';
 
 const Img_Drop = () => {
 
     const [preview, setPreview] = useState<string | null>(null);
     const [isDragOver, setIsDragOver] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const [isProcessing, setProcessing] = useState(false);
+    const [result, setResult] = useState<string | null>(null);
+
+    async function handleProcess() {
+        if (!preview) return;
+        setProcessing(true);
+    
+        const output = await ImgConvert(
+          preview,
+          "#000000", // Black Additional layer color
+          "#5c1566"  // Purple saturarion layer color
+        );
+    
+        setResult(output);
+        setProcessing(false);
+      }
+    
+      function handleDownload() {
+        if (!result) return;
+        const link = document.createElement("a");
+        link.href = result;
+        link.download = "processed-image.png";
+        link.click();
+      }
 
     function handleFile(file: File) {
         if (!file.type.startsWith("image/")) return;
@@ -28,61 +53,80 @@ const Img_Drop = () => {
   return (
     <div className="min-h-screen flex items-center px-6">
       <div className="max-w-xl mx-auto w-full text-center">
-        <div className='drop-frame'>  
-                <div
-                onDrop={handleDrop}
-                onDragOver={e => {
-                    e.preventDefault();
-                    setIsDragOver(true);
-                }}
-                onDragLeave={() => setIsDragOver(false)}
-                className={`drop-zone-visual ${isDragOver ? "drag-active" : ""}`}
-                >
-                {preview ? (
-                    <img
-                    src={preview}
-                    alt="Preview"
-                    className="max-h-64 mx-auto rounded"
-                    />
-                ) : (
-                    <>
-                    <img src="/public/icons/upload.svg" alt="Upload" style={{ width: '100px', height: '100px' }} className='mx-auto text-4xl mb-4 w-14 h-14 text-neutral-400'/>
+      <div className="drop-frame">
+        <div
+            onDrop={handleDrop}
+            onDragOver={e => {
+            e.preventDefault();
+            setIsDragOver(true);
+            }}
+            onDragLeave={() => setIsDragOver(false)}
+            className={`drop-zone-visual ${isDragOver ? "drag-active" : ""}`}
+        >
+            {result ? (
+            <img
+                src={result}
+                alt="Result"
+                className="max-h-64 mx-auto rounded"
+            />
+            ) : preview ? (
+            <img
+                src={preview}
+                alt="Preview"
+                className="max-h-64 mx-auto rounded"
+            />
+            ) : (
+            <>
+                <img
+                src="/icons/upload.svg"
+                alt="Upload"
+                className="mx-auto mb-4 w-20 h-20 text-neutral-400"
+                />
 
-                    <p className="text-lg font-medium">
-                        Drop your image here
-                    </p>
-                    <p className="text-sm text-neutral-400 mt-1">
-                        PNG, JPG, or WEBP
-                    </p>
+                <p className="text-lg font-medium">
+                Drop your image here
+                </p>
+                <p className="text-sm text-neutral-400 mt-1">
+                PNG, JPG, or WEBP
+                </p>
 
-                    <button
-                        onClick={() => fileInputRef.current?.click()}
-                        className="mt-6 px-6 py-2 rounded-md bg-indigo-500 text-white
-                                hover:bg-indigo-400 transition"
-                    >
-                        Browse files
-                    </button>
-
-                    <input
-                        ref={fileInputRef}
-                        type="file"
-                        accept="image/*"
-                        onChange={handleBrowse}
-                        className="hidden"
-                    />
-                    </>
-                )}
-                </div>
-
-                {preview && (
                 <button
-                    className="mt-6 px-6 py-2 bg-white text-black rounded
-                            hover:bg-neutral-200 transition"
+                onClick={() => fileInputRef.current?.click()}
+                className="mt-6 px-6 py-2 rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition"
                 >
-                    Download Result
+                Browse files
                 </button>
-                )}
-            </div>
+
+                <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleBrowse}
+                className="hidden"
+                />
+            </>
+            )}
+        </div>
+
+        {preview && !result && (
+            <button
+            onClick={handleProcess}
+            disabled={isProcessing}
+            className="mt-6 px-6 py-2 rounded-md bg-neutral-800 text-white hover:bg-neutral-700 transition"
+            >
+            {isProcessing ? "Processing..." : "Upload"}
+            </button>
+        )}
+
+        {result && (
+            <button
+            onClick={handleDownload}
+            className="mt-6 px-6 py-2 rounded-md bg-emerald-500 text-white hover:bg-emerald-400 transition"
+            >
+            Download the result
+            </button>
+        )}
+        </div>
         </div>
     </div>
   )

@@ -8,7 +8,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Img_Drop />
-      </div>
+    </div>
   )
 }
 
