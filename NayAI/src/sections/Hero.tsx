@@ -1,4 +1,5 @@
 import Img_Hero from "../assets/img_hero.png"
+import.meta.env.VITE_APP_NAME
 
 const Hero = () => {
   return (
@@ -11,7 +12,7 @@ const Hero = () => {
       </div>
       <div className="max-w-2xl z-10">
         <h1 className="text-4xl text-neutral-100 md:text-5xl font-bold mb-6">
-          One-Shot AI Image Reveal
+          {import.meta.env.VITE_APP_NAME}
         </h1>
         <div className="bg-amber-200 px-40 py-1 rounded-2xl"></div>
         <p className="text-neutral-400 text-lg font-sm font-stretch-50% shadow-md shadow-amber-200">

@@ -4,7 +4,8 @@ const Navbar = () => {
   return (
     <div className='fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-2xl border-2 border-neutral-800'>
         <div className='max-w-10xl mx-auto px-12 h-18 flex items-center justify-between'>
-            <a href="">
+            <a href="" className='flex items-center'>
+                <img src="/icons/NayAI.svg" alt="" className='h-12 w-12'/>
                 <span className='font-semibold text-3xl tracking-wide'>
                     NayAI
                 </span>
