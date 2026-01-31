@@ -51,7 +51,7 @@ const Img_Drop = () => {
       }
 
   return (
-    <div className="min-h-screen flex items-center px-6">
+    <div id='upload' className="min-h-screen flex items-center px-6">
       <div className="max-w-xl mx-auto w-full text-center">
       <div className="drop-frame">
         <div

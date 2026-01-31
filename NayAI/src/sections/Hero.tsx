@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center text-center px-6">
+    <div id="hero" className="min-h-screen flex items-center justify-center text-center px-6">
       <div className="max-w-2xl">
         <h1 className="text-4xl text-neutral-800 md:text-5xl font-bold mb-6">
           One-Shot AI Image Detector

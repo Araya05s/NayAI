@@ -20,11 +20,10 @@ export async function ImgConvert(
   ctx.globalAlpha = 0.6;
   ctx.fillStyle = overlayColor1;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
   ctx.globalAlpha = 1;
-
   const rgb = ColorUtils.hexToRgb(overlayColor2);
   const hsl = ColorUtils.rgbToHsl(rgb);
-
   let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   imageData = ImageProcessor.applySaturation(
     imageData,
