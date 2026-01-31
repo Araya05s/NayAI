@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react'
 import type { DragEvent, ChangeEvent } from 'react';
-import "/public/icons/upload.svg"
 import { ImgConvert } from '../utils/imgConvert';
 
 const Img_Drop = () => {

@@ -5,3 +5,86 @@
   border-color: #555555;
 }
 
+.about_img_frame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+}
+
+.img_reveal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+}
+
+.img_layer {
+  position: absolute;
+  inset: 0;
+}
+
+.img_layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img_before {
+  z-index: 1;
+}
+
+.img_after_layer {
+  z-index: 2;
+  clip-path: inset(0 100% 0 0);
+  animation: revealAfter 3s ease forwards infinite alternate;
+}
+
+.reveal_line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: white;
+  z-index: 3;
+  animation: wipeLine 3s ease forwards infinite alternate;
+}
+
+.img_label {
+  position: absolute;
+  bottom: 12px;
+  padding: 4px 10px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(4px);
+}
+
+.img_label.left {
+  left: 12px;
+}
+
+.img_label.right {
+  right: 12px;
+}
+
+@keyframes wipeLine {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes revealAfter {
+  0%{
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
