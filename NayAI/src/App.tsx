@@ -3,6 +3,7 @@ import About from './sections/About'
 import Footer from './sections/Footer'
 import Hero from './sections/Hero'
 import Img_Drop from './sections/Img_Drop'
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Img_Drop />
       <About />
       <Footer />
+      <Analytics />
     </div>
   )
 }
