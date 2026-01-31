@@ -17,3 +17,6 @@ Right now, only core functionality is deployed. UI and secondary pages pending.
 
 ## Live Demo
 https://nayaiaiimagereveal.vercel.app
+
+## License
+MIT
