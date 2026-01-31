@@ -1,7 +1,7 @@
 {
     "framework": "vite",
-    "buildCommand": "cd NAYAI && npm install && npm run build",
-    "outputDirectory": "NAYAI/dist",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
