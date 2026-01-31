@@ -4,8 +4,7 @@ import afterImg from "../assets/img_after.png"
 const About = () => {
   return (
     <section
-        id="about"
-        className="bg-neutral-100 text-neutral-900 py-24"
+        id="about" className="bg-neutral-100 text-neutral-900 py-24"
     >
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
@@ -15,13 +14,12 @@ const About = () => {
             </h2>
 
             <p className="text-neutral-700 leading-relaxed mb-4">
-            This tool applies a carefully designed color treatment
-            inspired by professional photo editing workflows.
+            This tool applies a carefully designed color treatment inspired by professional photo editing workflows. Any weird pixels? strange glitchy colors? Abstract colorful pixel even though nothing abstract in original image? It's an AI Image
             </p>
 
             <p className="text-neutral-700 leading-relaxed">
             No sliders. No presets.  
-            Just drop an image and receive the AI revelation result
+            Just drop an image and receive the AI revelation result, even at the tiniest one.
             in seconds.
             </p>
         </div>

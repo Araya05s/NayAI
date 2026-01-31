@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import About from './sections/About'
+import Footer from './sections/Footer'
 import Hero from './sections/Hero'
 import Img_Drop from './sections/Img_Drop'
 
@@ -10,6 +11,7 @@ const App = () => {
       <Hero />
       <Img_Drop />
       <About />
+      <Footer />
     </div>
   )
 }
