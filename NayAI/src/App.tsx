@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar'
 import About from './sections/About'
-import Footer from './sections/Footer'
+import Footer from './components/Footer'
 import Hero from './sections/Hero'
 import Img_Drop from './sections/Img_Drop'
 import { Analytics } from "@vercel/analytics/react"
+import Howto from './sections/Howto'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Hero />
       <Img_Drop />
       <About />
+      <Howto />
       <Footer />
       <Analytics />
     </div>
