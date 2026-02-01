@@ -1,5 +1,4 @@
 import Img_Hero from "../assets/img_hero.png"
-import.meta.env.VITE_APP_NAME
 
 const Hero = () => {
   return (
