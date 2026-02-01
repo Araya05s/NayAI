@@ -52,6 +52,12 @@ const Img_Drop = () => {
   return (
     <div id='upload' className="min-h-screen flex items-center px-6">
       <div className="max-w-xl mx-auto w-full text-center">
+        <p className='text-neutral-700 text-4xl font-semibold pb-4'>
+          Upload and process your image
+        </p>
+        <p className='text-neutral-400 text-xl font-semibold pb-12'>
+          Upload and process your image to see the result
+        </p>
       <div className="drop-frame">
         <div
             onDrop={handleDrop}
@@ -82,16 +88,12 @@ const Img_Drop = () => {
                 className="mx-auto mb-4 w-20 h-20 text-neutral-400"
                 />
 
-                <p className="text-lg font-medium">
-                Drop your image here
+                <p className="text-lg text-neutral-600 font-medium">
+                Drop your image here, or
                 </p>
-                <p className="text-sm text-neutral-400 mt-1">
-                PNG, JPG, or WEBP
-                </p>
-
                 <button
                 onClick={() => fileInputRef.current?.click()}
-                className="mt-6 px-6 py-2 rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition"
+                className="mt-4 px-6 py-2 rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition"
                 >
                 Browse files
                 </button>
@@ -103,6 +105,9 @@ const Img_Drop = () => {
                 onChange={handleBrowse}
                 className="hidden"
                 />
+                <p className="text-sm text-neutral-400 mt-1">
+                PNG, JPG, or WEBP
+                </p>
             </>
             )}
         </div>
