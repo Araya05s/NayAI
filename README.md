@@ -1,7 +1,14 @@
 # NayAI
-A lightweight web non-DB projects that able to reveal wheter it's an AI image or not, by showing pixelated colors without using AI detection system. Purely in TypeScript and Canvas API.
+A lightweight web non-DB projects that able to reveal wheter it's an AI image or not, by showing pixelated colors without using AI detection system. Purely in ReactJS, TypeScript and Canvas API.
 
-Right now, only core functionality is deployed. UI and secondary pages pending.
+## The Idea
+The idea was simple:
+ drop an image -> apply a carefully designed color treatment -> download the result, without sliders or presets.
+
+## Note
+This is an early iteration, and I’m still refining the color behavior. While some AI images are correctly revealed, it may be too sensitive that some human-made images are revealing pixelated colors as well.
+
+Human-made images, such as 3D arts, renders and models, might be hard to differ since they are revealing pixelated colors as well. But for hand-drawn, anime, and sketches, especially with white backgrounds, are correctly revealed.
 
 ## Tech
 - React + TypeScript
@@ -16,7 +23,7 @@ Right now, only core functionality is deployed. UI and secondary pages pending.
 - No server processing
 
 ## Live Demo
-https://nayaiaiimagereveal.vercel.app
+https://nay-ai.vercel.app/
 
 ## License
 MIT
