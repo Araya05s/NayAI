@@ -11,7 +11,7 @@ const steps = [
 const Howto = () => {
   return (
     <section
-        id="hint" className="bg-neutral-100 text-neutral-900 pt-12">
+        id="hint" className="bg-neutral-100 text-neutral-900 pt-12 overflow-hidden">
       <div className="mb-4">
           <h2 className="bg-neutral-300 py-12 text-center text-4xl font-semibold text-neutral-700">
             How to spot AI Image?
@@ -21,7 +21,7 @@ const Howto = () => {
           The image is definitely AI generated if the image has either one or more of the following:
           </p>
         
-      <div className=" max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-center gap-24">
+      <div className=" max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-center lg:gap-24 gap-4">
         {steps.map(step => (
           <div key={step.id} className="group text-center">
             <div className="relative mx-auto w-44 h-44 rounded-full border border-neutral-300 overflow-hidden transition-transform duration-300 group-hover:scale-110">
@@ -41,8 +41,8 @@ const Howto = () => {
           </div>
         ))}
       </div>
-      <div className="bg-lime-300 mt-1 mb-6 py-0.5 px-50"/>
-      <div className="py-1 text-center text-sm font-semibold text-neutral-500">
+      <div className="bg-lime-300 mt-1 lg:mb-6 mb-1 py-0.5 px-50"/>
+      <div className="py-1 text-center lg:text-sm text-xs font-semibold text-neutral-500">
         <p>*Don't forget to zoom in to see better view of the weird pixels.</p>
       </div>
     </section>
