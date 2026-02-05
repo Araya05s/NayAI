@@ -41,8 +41,7 @@ const Howto = () => {
           </div>
         ))}
       </div>
-      <div className="bg-lime-300 mt-1 lg:mb-6 mb-1 py-0.5 px-50"/>
-      <div className="py-1 text-center lg:text-sm text-xs font-semibold text-neutral-500">
+      <div className="py-1 pt-8 text-center lg:text-sm text-xs font-semibold text-neutral-500 underline underline-offset-2">
         <p>*Don't forget to zoom in to see better view of the weird pixels.</p>
       </div>
     </section>

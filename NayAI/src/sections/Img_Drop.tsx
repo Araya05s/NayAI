@@ -28,7 +28,7 @@ const Img_Drop = () => {
         if (!result) return;
         const link = document.createElement("a");
         link.href = result;
-        link.download = "processed-image.png";
+        link.download = "image_reveal_result.png";
         link.click();
       }
 

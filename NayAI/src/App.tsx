@@ -5,6 +5,7 @@ import Hero from './sections/Hero'
 import Img_Drop from './sections/Img_Drop'
 import { Analytics } from "@vercel/analytics/react"
 import Howto from './sections/Howto'
+import Compare from './sections/Compare'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Img_Drop />
       <About />
       <Howto />
+      <Compare />
       <Footer />
       <Analytics />
     </div>
