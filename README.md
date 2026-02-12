@@ -8,7 +8,7 @@ The idea was simple:
 ## Note
 This is an early iteration, and I’m still refining the color behavior. While some AI images are correctly revealed, it may be too sensitive that some human-made images are revealing pixelated colors as well.
 
-Human-made images, such as 3D arts, renders and models, might be hard to differ since they are revealing pixelated colors as well. But for hand-drawn, anime, and sketches, especially with white backgrounds, are correctly revealed.
+Human-made images, such as 3D arts, renders and models, might be hard to differ since they are revealing pixelated colors as well. One thing to notice is that the shadows from real 3D rendering will resulting "magnetic field" effects from each sharp points on the shadows, whereas the AI image will show distorted lines, as if it was trying to do the same. But for hand-drawn, anime, and sketches, especially with white backgrounds, are correctly revealed.
 
 ## Tech
 - React + TypeScript
